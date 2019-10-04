@@ -1,0 +1,56 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/home/k9173a/.oh-my-zsh"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Current theme: powerlevel9k - best ever!
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" "
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+
+# Zsh plugins
+plugins=(
+  git
+  pip
+  python
+  sudo
+)
+
+# Common aliases
+alias cls="clear"
+alias simlink_list="ls -l --color | grep '\->'"
+
+# Zsh aliases
+alias zsh_cfg="gedit ~/.zshrc"
+alias omzsh_cfg="gedit ~/.oh-my-zsh"
+
+# Django aliases
+alias django_run="python manage.py runserver"
+alias django_mk_migrations="python manage.py migrate"
+alias django_migrate="python manage.py migrate"
+
+# Creates directory and checks it
+function mk_dir {
+  mkdir $1; cd $1; ls
+}
+
+# Unzips any archive
+function uzp {
+  unzip $@ 2> /dev/null || tar -xf $@ && ls
+}
+
+# Auto/Tab complete mode
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+source $ZSH/oh-my-zsh.sh
+
+# Zsh syntax highlighting plugin
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
