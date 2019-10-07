@@ -32,10 +32,12 @@ alias zsh_cfg="gedit ~/.zshrc"
 alias omzsh_cfg="gedit ~/.oh-my-zsh"
 
 # Django aliases
-alias djad_run="django-admin runserver"
-alias djad_mk_migrations="django-admin makemigrations"
-alias djad_migrate="django-admin migrate"
-alias djad_test="django-admin test"
+function djad_run {
+  python manage.py runserver $1
+}
+alias djad_mk_migrations="python manage.py makemigrations"
+alias djad_migrate="python manage.py migrate"
+alias djad_test="python manage.py test"
 
 # Creates directory and checks it
 function mk_dir {
