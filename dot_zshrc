@@ -1,7 +1,7 @@
 # Path to oh-my-zsh.
 export ZSH="/home/k9173a/.oh-my-zsh"
 # Default editor
-export EDITOR="/usr/bin/gedit"
+export EDITOR="/usr/bin/vim"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -28,8 +28,8 @@ alias cls="clear"
 alias simlink_list="ls -l --color | grep '\->'"
 
 # Zsh aliases
-alias zsh_cfg="gedit ~/.zshrc"
-alias omzsh_cfg="gedit ~/.oh-my-zsh"
+alias zsh_cfg="vim ~/.zshrc"
+alias omzsh_cfg="vim ~/.oh-my-zsh"
 
 # Django aliases
 function djad_run {
